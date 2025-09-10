@@ -1,6 +1,5 @@
 import React from 'react'
 import ChartTab from './ChartTab'
-import OptionsChainTab from './OptionsChainTab'
 import CompanyInfoTab from './CompanyInfoTab'
 import NewsTab from './NewsTab'
 
@@ -21,10 +20,6 @@ const MainPanel = ({ ticker, isLoading, data }) => {
     <div className="space-y-6">
       <div className="card p-6">
         <ChartTab ticker={ticker} payload={data?.chart} />
-      </div>
-
-      <div className="card p-6">
-        <OptionsChainTab ticker={ticker} payload={data?.options} />
       </div>
 
       <div className="card p-6">

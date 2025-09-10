@@ -120,7 +120,6 @@ function App() {
       const mapped = map(response)
       setTabData({
         chart: mapped.chart ?? null,
-        options: mapped.options ?? null,
         company: mapped.company ?? null,
         news: mapped.news ?? null,
       })
