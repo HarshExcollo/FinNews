@@ -1,6 +1,7 @@
 import React from 'react'
 import { Star } from 'lucide-react'
 import { motion } from 'framer-motion'
+import analysisImage from '../../nick-chong-N__BnvQ_w18-unsplash.jpg'
 
 const ChartTab = ({ ticker, payload }) => {
 
@@ -77,11 +78,9 @@ const ChartTab = ({ ticker, payload }) => {
         )}
         <div className="w-56 h-36 rounded-lg overflow-hidden flex-shrink-0">
           <img
-            src="https://share.google/images/2UrPNRgwhgbMqO30s"
+            src={analysisImage}
             alt="black flat screen computer monitor"
             className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-            onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1590311820643-7a2cbb5a1f1c?fm=jpg&q=80&w=560&fit=crop&auto=format'; }}
           />
         </div>
       </div>
