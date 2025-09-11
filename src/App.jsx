@@ -152,7 +152,7 @@ function App() {
       <MarketBar data={marketData} />
       
       {/* Main Content Area */}
-      <div className="flex flex-col lg:flex-row gap-4 p-4">
+      <div className="flex flex-col lg:flex-row gap-4 px-4 sm:px-8 lg:px-20">
         {/* Main Content */}
         <div className="flex-1">
           <MainPanel

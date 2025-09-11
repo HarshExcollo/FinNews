@@ -10,11 +10,11 @@ const CompanyInfoTab = ({ ticker, payload }) => {
   const { logoUrl, name, sector, marketCap, pe, eps, description, meta } = payload || {}
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-20">
       {description && (
-        <div>
+        <div style={{ maxWidth: '100%' }} className="mb-8">
           <h3 className="text-lg font-semibold text-white mb-2">Company Profile</h3>
-          <p className="text-gray-300 leading-relaxed">{description}</p>
+          <p className="text-gray-300 leading-relaxed break-words">{description}</p>
         </div>
       )}
 
@@ -35,10 +35,11 @@ const CompanyInfoTab = ({ ticker, payload }) => {
         >
           Key Company Metrics
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div
             style={{
-              width: '286px',
+              width: '100%',
+              maxWidth: '420px',
               minHeight: '306px',
               opacity: 1,
               paddingTop: '47px',
@@ -54,7 +55,7 @@ const CompanyInfoTab = ({ ticker, payload }) => {
             <div
               className="text-white mb-4"
               style={{
-                width: '236px',
+                width: '100%',
                 height: '38px',
                 opacity: 1,
                 fontFamily: 'Raleway, ui-sans-serif, system-ui',
@@ -70,7 +71,7 @@ const CompanyInfoTab = ({ ticker, payload }) => {
             <div
               className="flex-1"
               style={{
-                width: '236px',
+                width: '100%',
                 opacity: 1,
                 fontFamily: 'Inter, ui-sans-serif, system-ui',
                 fontWeight: 500,
@@ -87,7 +88,8 @@ const CompanyInfoTab = ({ ticker, payload }) => {
           </div>
           <div
             style={{
-              width: '286px',
+              width: '100%',
+              maxWidth: '420px',
               minHeight: '306px',
               opacity: 1,
               paddingTop: '47px',
@@ -103,7 +105,7 @@ const CompanyInfoTab = ({ ticker, payload }) => {
             <div
               className="text-white mb-4"
               style={{
-                width: '236px',
+                width: '100%',
                 height: '38px',
                 opacity: 1,
                 fontFamily: 'Raleway, ui-sans-serif, system-ui',
@@ -119,7 +121,7 @@ const CompanyInfoTab = ({ ticker, payload }) => {
             <div
               className="flex-1"
               style={{
-                width: '236px',
+                width: '100%',
                 opacity: 1,
                 fontFamily: 'Inter, ui-sans-serif, system-ui',
                 fontWeight: 500,
@@ -136,7 +138,8 @@ const CompanyInfoTab = ({ ticker, payload }) => {
           </div>
           <div
             style={{
-              width: '286px',
+              width: '100%',
+              maxWidth: '420px',
               minHeight: '306px',
               opacity: 1,
               paddingTop: '47px',
@@ -152,7 +155,7 @@ const CompanyInfoTab = ({ ticker, payload }) => {
             <div
               className="text-white mb-4"
               style={{
-                width: '236px',
+                width: '100%',
                 height: '38px',
                 opacity: 1,
                 fontFamily: 'Raleway, ui-sans-serif, system-ui',
@@ -168,7 +171,7 @@ const CompanyInfoTab = ({ ticker, payload }) => {
             <div
               className="flex-1"
               style={{
-                width: '236px',
+                width: '100%',
                 opacity: 1,
                 fontFamily: 'Inter, ui-sans-serif, system-ui',
                 fontWeight: 500,

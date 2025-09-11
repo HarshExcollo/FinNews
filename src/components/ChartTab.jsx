@@ -26,7 +26,10 @@ const ChartTab = ({ ticker, payload }) => {
         </h2>
       </div>
 
-      <div className="flex items-start justify-between gap-6 text-gray-400">
+      <div
+        className="flex flex-col md:flex-row md:flex-wrap items-start justify-between gap-6 lg:gap-10 text-gray-400"
+        style={{ fontFamily: 'Inter, ui-sans-serif, system-ui' }}
+      >
         {!payload ? (
           <div className="text-center flex-1">
             <div className="text-sm">Waiting for chart data...</div>
@@ -40,7 +43,8 @@ const ChartTab = ({ ticker, payload }) => {
               <div
                 className="w-full h-full flex-1"
                 style={{
-                  width: '608px',
+                  width: '100%',
+                  maxWidth: '608px',
                   height: 'auto',
                   opacity: 1,
                   fontFamily: 'Inter, ui-sans-serif, system-ui',
@@ -58,9 +62,10 @@ const ChartTab = ({ ticker, payload }) => {
             const text = typeof payload === 'object' && payload?.text ? payload.text : String(payload)
             return (
               <p
-                className="flex-1"
+                className="flex-1 max-w-full"
                 style={{
-                  width: '608px',
+                  width: '100%',
+                  maxWidth: '608px',
                   height: 'auto',
                   opacity: 1,
                   fontFamily: 'Inter, ui-sans-serif, system-ui',
@@ -76,7 +81,7 @@ const ChartTab = ({ ticker, payload }) => {
             )
           })()
         )}
-        <div className="w-56 h-36 rounded-lg overflow-hidden flex-shrink-0">
+        <div className="w-full md:w-80 lg:w-96 h-56 md:h-64 rounded-lg overflow-hidden flex-shrink-0 md:-ml-8 lg:-ml-10 xl:-ml-12">
           <img
             src={analysisImage}
             alt="black flat screen computer monitor"

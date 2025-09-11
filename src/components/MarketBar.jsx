@@ -25,8 +25,8 @@ const MarketBar = ({ data }) => {
   }
 
   return (
-    <div className="bg-dark-bg py-8">
-      <div className="px-20">
+    <div className="bg-dark-bg py-6 sm:py-8">
+      <div className="px-4 sm:px-8 lg:px-20">
         <div className="flex flex-col gap-6">
           <h1
             className="text-3xl md:text-4xl font-extrabold text-white tracking-tight"

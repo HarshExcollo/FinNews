@@ -25,7 +25,7 @@ const NewsTab = ({ ticker, payload }) => {
       <h2
         className="text-white"
         style={{
-          width: '928px',
+          width: '100%',
           height: '28px',
           opacity: 1,
           fontFamily: 'Inter, ui-sans-serif, system-ui',
@@ -38,7 +38,7 @@ const NewsTab = ({ ticker, payload }) => {
       >
         News Feed
       </h2>
-      <div className="space-y-4 max-h-[32rem] overflow-y-auto pr-2">
+      <div className="space-y-4 max-h-[32rem] overflow-y-auto pr-0 sm:pr-2">
       {articles.map((a, idx) => {
         const titleRaw = typeof a === 'string' ? a : a.title
         const { cleanText: title, url: urlFromTitle } = extractLinkFromText(titleRaw)
@@ -51,7 +51,7 @@ const NewsTab = ({ ticker, payload }) => {
             <div
               className="text-white font-semibold"
               style={{
-                width: '608px',
+                width: '100%',
                 minHeight: '20px',
                 opacity: 1,
                 fontFamily: 'Inter, ui-sans-serif, system-ui',

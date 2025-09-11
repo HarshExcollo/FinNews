@@ -15,8 +15,8 @@ const Header = ({ onSearch, isLoading }) => {
 
   return (
     <header className="bg-dark-bg sticky top-0 z-50">
-      <div className="px-20 py-3">
-        <div className="flex items-center gap-4">
+      <div className="px-4 sm:px-8 lg:px-20 py-3">
+        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
           {/* Logo and Title */}
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gradient-to-r from-trading-blue to-trading-green rounded-lg flex items-center justify-center">
@@ -42,7 +42,7 @@ const Header = ({ onSearch, isLoading }) => {
           </div>
 
           {/* Search Bar */}
-          <form onSubmit={handleSubmit} className="flex-1 max-w-3xl">
+          <form onSubmit={handleSubmit} className="w-full sm:flex-1 sm:max-w-3xl">
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
