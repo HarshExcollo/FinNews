@@ -17,18 +17,10 @@ const MainPanel = ({ ticker, isLoading, data }) => {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="card p-6">
-        <ChartTab ticker={ticker} payload={data?.chart} />
-      </div>
-
-      <div className="card p-6">
-        <CompanyInfoTab ticker={ticker} payload={data?.company} />
-      </div>
-
-      <div className="card p-6">
-        <NewsTab ticker={ticker} payload={data?.news} />
-      </div>
+    <div className="space-y-20 px-20">
+      <ChartTab ticker={ticker} payload={data?.chart} />
+      <CompanyInfoTab ticker={ticker} payload={data?.company} />
+      <NewsTab ticker={ticker} payload={data?.news} />
     </div>
   )
 }

@@ -25,13 +25,17 @@ const MarketBar = ({ data }) => {
   }
 
   return (
-    <div className="bg-dark-card border-b border-dark-border py-3">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-medium text-gray-400">Market Overview</span>
-            <div className="w-2 h-2 bg-trading-green rounded-full animate-pulse"></div>
-          </div>
+    <div className="bg-dark-bg py-8">
+      <div className="px-20">
+        <div className="flex flex-col gap-6">
+          <h1
+            className="text-3xl md:text-4xl font-extrabold text-white tracking-tight"
+            style={{ width: '288px', height: '40px', minWidth: '288px', opacity: 1 }}
+          >
+            Market Overview
+          </h1>
+
+          {/* Analysis block removed as requested */}
           
           <div className="flex flex-wrap items-center gap-6">
             {indices.map((index) => {

@@ -16,12 +16,29 @@ const NewsTab = ({ ticker, payload }) => {
 
   if (!articles.length) {
     return (
-      <div className="bg-dark-card rounded-lg p-6 text-center text-gray-400">Waiting for news...</div>
+      <div className="text-center text-gray-400">Waiting for news...</div>
     )
   }
 
   return (
-    <div className="space-y-4 max-h-[32rem] overflow-y-auto pr-2">
+    <div className="space-y-6">
+      <h2
+        className="text-white"
+        style={{
+          width: '928px',
+          height: '28px',
+          opacity: 1,
+          fontFamily: 'Inter, ui-sans-serif, system-ui',
+          fontWeight: 700,
+          fontStyle: 'normal',
+          fontSize: '22px',
+          lineHeight: '28px',
+          letterSpacing: '0px'
+        }}
+      >
+        News Feed
+      </h2>
+      <div className="space-y-4 max-h-[32rem] overflow-y-auto pr-2">
       {articles.map((a, idx) => {
         const titleRaw = typeof a === 'string' ? a : a.title
         const { cleanText: title, url: urlFromTitle } = extractLinkFromText(titleRaw)
@@ -29,27 +46,84 @@ const NewsTab = ({ ticker, payload }) => {
         return (
           <div
             key={idx}
-            className="card p-4 hover:bg-dark-border transition-colors"
+            className="p-6 hover:bg-dark-border transition-colors bg-dark-bg rounded-lg"
           >
-            <div className="text-sm text-gray-400">{a.source || '—'}</div>
-            <div className="text-white font-semibold">{title}</div>
-            {a.summary && <div className="text-gray-300 text-sm mt-1 line-clamp-2">{a.summary}</div>}
-            <div className="mt-3 flex items-center justify-between">
-              <div className="text-xs text-gray-500">{a.publishedAt || ''}</div>
-              {url && (
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-secondary px-3 py-1"
-                >
-                  Read more
-                </a>
+            <div
+              className="text-white font-semibold"
+              style={{
+                width: '608px',
+                minHeight: '20px',
+                opacity: 1,
+                fontFamily: 'Inter, ui-sans-serif, system-ui',
+                fontWeight: 700,
+                fontStyle: 'normal',
+                fontSize: '16px',
+                lineHeight: '20px',
+                letterSpacing: '0px',
+                marginBottom: '12px'
+              }}
+            >
+              {title}
+              {(a.source || a.publishedAt) && (
+                <span className="text-gray-400 text-sm font-normal ml-2">
+                  — {a.source || ''} {a.publishedAt ? `— ${a.publishedAt}` : ''}
+                </span>
               )}
             </div>
+            {a.summary && (
+              <div 
+                className="text-gray-300 text-sm line-clamp-2"
+                style={{ marginBottom: '12px' }}
+              >
+                {a.summary}
+              </div>
+            )}
+            {url && (
+              <a
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                className="block"
+                style={{
+                  width: '119px',
+                  height: '44px',
+                  opacity: 1,
+                  gap: '8px',
+                  paddingTop: '10px',
+                  paddingRight: '16px',
+                  paddingBottom: '10px',
+                  paddingLeft: '16px',
+                  borderRadius: '8px',
+                  background: 'linear-gradient(180deg, rgba(142, 84, 247, 0.5) 0%, rgba(72, 50, 197, 0.164) 67.2%, rgba(207, 199, 255, 0) 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textDecoration: 'none',
+                  marginTop: '8px'
+                }}
+              >
+                <span
+                  style={{
+                    width: '87px',
+                    height: '24px',
+                    opacity: 1,
+                    fontFamily: 'Poppins, ui-sans-serif, system-ui',
+                    fontWeight: 600,
+                    fontStyle: 'normal',
+                    fontSize: '16px',
+                    lineHeight: '100%',
+                    letterSpacing: '0%',
+                    color: '#FFFFFF'
+                  }}
+                >
+                  Read More
+                </span>
+              </a>
+            )}
           </div>
         )
       })}
+      </div>
     </div>
   )
 }

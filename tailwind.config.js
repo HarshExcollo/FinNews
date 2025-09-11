@@ -12,8 +12,9 @@ export default {
         'trading-red': '#FF6B6B',
         'trading-blue': '#4A90E2',
         'trading-yellow': '#F5A623',
-        'dark-bg': '#0F0F23',
+        'dark-bg': '#0A0D17',
         'dark-card': '#1A1A2E',
+        'metrics-card': '#1F1D2C',
         'dark-border': '#2D2D44',
       },
       animation: {

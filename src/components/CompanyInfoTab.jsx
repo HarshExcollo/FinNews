@@ -10,53 +10,182 @@ const CompanyInfoTab = ({ ticker, payload }) => {
   const { logoUrl, name, sector, marketCap, pe, eps, description, meta } = payload || {}
 
   return (
-    <div className="space-y-6">
-      <div className="card p-6 flex flex-col sm:flex-row gap-6">
-        {logoUrl && (
-          <div className="w-20 h-20 rounded-lg overflow-hidden bg-dark-border flex items-center justify-center">
-            <img src={logoUrl} alt={`${ticker} logo`} className="w-full h-full object-contain" />
+    <div className="space-y-12">
+      {description && (
+        <div>
+          <h3 className="text-lg font-semibold text-white mb-2">Company Profile</h3>
+          <p className="text-gray-300 leading-relaxed">{description}</p>
+        </div>
+      )}
+
+      <div>
+        <h2
+          className="text-white mb-4"
+          style={{
+            width: '928px',
+            height: '28px',
+            opacity: 1,
+            fontFamily: 'Inter, ui-sans-serif, system-ui',
+            fontWeight: 700,
+            fontStyle: 'normal',
+            fontSize: '22px',
+            lineHeight: '28px',
+            letterSpacing: '0px'
+          }}
+        >
+          Key Company Metrics
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          <div
+            style={{
+              width: '286px',
+              minHeight: '306px',
+              opacity: 1,
+              paddingTop: '47px',
+              paddingRight: '25px',
+              paddingBottom: '47px',
+              paddingLeft: '25px',
+              borderRadius: '21px',
+              backgroundColor: '#1F1D2C',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            <div
+              className="text-white mb-4"
+              style={{
+                width: '236px',
+                height: '38px',
+                opacity: 1,
+                fontFamily: 'Raleway, ui-sans-serif, system-ui',
+                fontWeight: 600,
+                fontStyle: 'normal',
+                fontSize: '32px',
+                lineHeight: '100%',
+                letterSpacing: '0%'
+              }}
+            >
+              Market Cap
+            </div>
+            <div
+              className="flex-1"
+              style={{
+                width: '236px',
+                opacity: 1,
+                fontFamily: 'Inter, ui-sans-serif, system-ui',
+                fontWeight: 500,
+                fontStyle: 'normal',
+                fontSize: '16px',
+                lineHeight: '131%',
+                letterSpacing: '0%',
+                color: '#9B9B9B',
+                textAlign: 'left'
+              }}
+            >
+              {description || '—'}
+            </div>
           </div>
-        )}
-        <div className="flex-1">
-          <h2 className="text-2xl font-bold text-white">{name || ticker}</h2>
-          <p className="text-gray-400">{sector || '—'}</p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">
-            <div>
-              <div className="text-sm text-gray-400">Market Cap</div>
-              <div className="text-white font-semibold">{marketCap ?? '—'}</div>
+          <div
+            style={{
+              width: '286px',
+              minHeight: '306px',
+              opacity: 1,
+              paddingTop: '47px',
+              paddingRight: '25px',
+              paddingBottom: '47px',
+              paddingLeft: '25px',
+              borderRadius: '21px',
+              backgroundColor: '#1F1D2C',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            <div
+              className="text-white mb-4"
+              style={{
+                width: '236px',
+                height: '38px',
+                opacity: 1,
+                fontFamily: 'Raleway, ui-sans-serif, system-ui',
+                fontWeight: 600,
+                fontStyle: 'normal',
+                fontSize: '32px',
+                lineHeight: '100%',
+                letterSpacing: '0%'
+              }}
+            >
+              P/E
             </div>
-            <div>
-              <div className="text-sm text-gray-400">P/E</div>
-              <div className="text-white font-semibold">{pe ?? '—'}</div>
+            <div
+              className="flex-1"
+              style={{
+                width: '236px',
+                opacity: 1,
+                fontFamily: 'Inter, ui-sans-serif, system-ui',
+                fontWeight: 500,
+                fontStyle: 'normal',
+                fontSize: '16px',
+                lineHeight: '131%',
+                letterSpacing: '0%',
+                color: '#9B9B9B',
+                textAlign: 'left'
+              }}
+            >
+              {description || '—'}
             </div>
-            <div>
-              <div className="text-sm text-gray-400">EPS</div>
-              <div className="text-white font-semibold">{eps ?? '—'}</div>
+          </div>
+          <div
+            style={{
+              width: '286px',
+              minHeight: '306px',
+              opacity: 1,
+              paddingTop: '47px',
+              paddingRight: '25px',
+              paddingBottom: '47px',
+              paddingLeft: '25px',
+              borderRadius: '21px',
+              backgroundColor: '#1F1D2C',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            <div
+              className="text-white mb-4"
+              style={{
+                width: '236px',
+                height: '38px',
+                opacity: 1,
+                fontFamily: 'Raleway, ui-sans-serif, system-ui',
+                fontWeight: 600,
+                fontStyle: 'normal',
+                fontSize: '32px',
+                lineHeight: '100%',
+                letterSpacing: '0%'
+              }}
+            >
+              EPS
+            </div>
+            <div
+              className="flex-1"
+              style={{
+                width: '236px',
+                opacity: 1,
+                fontFamily: 'Inter, ui-sans-serif, system-ui',
+                fontWeight: 500,
+                fontStyle: 'normal',
+                fontSize: '16px',
+                lineHeight: '131%',
+                letterSpacing: '0%',
+                color: '#9B9B9B',
+                textAlign: 'left'
+              }}
+            >
+              {description || '—'}
             </div>
           </div>
         </div>
       </div>
 
-      {description && (
-        <div className="card p-6">
-          <h3 className="text-lg font-semibold text-white mb-2">About</h3>
-          <p className="text-gray-300 leading-relaxed">{description}</p>
-        </div>
-      )}
-
-      {meta && (
-        <div className="card p-6">
-          <h3 className="text-lg font-semibold text-white mb-4">Key Metrics</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {Object.entries(meta).map(([label, value]) => (
-              <div key={label} className="bg-dark-card rounded-lg p-4">
-                <div className="text-sm text-gray-400">{label}</div>
-                <div className="text-white font-semibold">{value ?? '—'}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   )
 }
