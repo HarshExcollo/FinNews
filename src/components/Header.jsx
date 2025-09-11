@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Search, TrendingUp, Loader2, Settings } from 'lucide-react'
+import { Search, TrendingUp, Loader2 } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const Header = ({ onSearch, isLoading }) => {
@@ -60,20 +60,7 @@ const Header = ({ onSearch, isLoading }) => {
             </div>
           </form>
 
-          {/* Right controls */}
-          <div className="flex items-center gap-4 ml-auto">
-            <button
-              type="button"
-              className="w-10 h-10 rounded-full flex items-center justify-center"
-              style={{ backgroundColor: 'rgba(62, 49, 79, 0.8)' }}
-              aria-label="Settings"
-            >
-              <Settings className="w-5 h-5 text-gray-300" />
-            </button>
-            <div className="w-10 h-10 rounded-full overflow-hidden ring-1 ring-dark-border">
-              <div className="w-full h-full bg-gray-400" />
-            </div>
-          </div>
+          {/* Right controls removed as requested */}
         </div>
       </div>
     </header>
